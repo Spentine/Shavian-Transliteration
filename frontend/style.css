@@ -1,3 +1,33 @@
 body {
   background-color: #222222;
+  color: #ffffff;
+  font-family: "Inter Alia", Arial, sans-serif;
+  font-size: 24px;
+}
+
+p {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+button, textarea, input, select {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+  
+  background-color: #333333;
+  border: 1px solid #444444;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+button:hover {
+  background-color: #444444;
+  border: 1px solid #555555;
+}
+
+#input {
+  width: 600px;
+  height: 400px;
 }
