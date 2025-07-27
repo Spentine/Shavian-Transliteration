@@ -81,7 +81,7 @@ let readlexData;
 
 // step 1 and 2 of conversion
 async function readlexConvert(text) {
-  const nonWord = " .,·⸰«»‹›(){}[]".split("");
+  const nonWord = " \n\t-:;/?!.,·⸰«»‹›(){}[]".split("");
   
   // split text into words and non-words
   const textSplit = [];

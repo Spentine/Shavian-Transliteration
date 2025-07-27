@@ -31,3 +31,7 @@ button:hover {
   width: 600px;
   height: 400px;
 }
+
+#output {
+  white-space: pre-wrap;
+}
