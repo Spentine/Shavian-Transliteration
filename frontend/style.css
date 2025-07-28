@@ -11,6 +11,11 @@ p {
   font-size: inherit;
 }
 
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
 button, textarea, input, select {
   font-family: inherit;
   color: inherit;

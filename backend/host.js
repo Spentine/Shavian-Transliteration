@@ -16,11 +16,13 @@ const requestHandler = async function (request) {
       const shavian = body.text;
       
       // get latin from shavian
-      const latin = await shavianToLatin(shavian);
+      const res = await shavianToLatin(shavian);
+      const latin = res.ai;
+      const rl = res.readlex;
       
       // return latin in response
       return new Response(
-        JSON.stringify({ text: latin }),
+        JSON.stringify({ text: latin, rl: rl }),
         {
           headers: {
             "Content-Type": "application/json",

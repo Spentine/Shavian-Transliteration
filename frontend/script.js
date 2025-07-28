@@ -19,6 +19,8 @@ async function shavianToLatinReq(shavian) {
   
   // parse the response and return the latin text
   const data = await response.json();
+  console.log(data);
+  
   return data.text;
 }
 
@@ -29,6 +31,7 @@ function main() {
 
   convertButton.addEventListener("click", async () => {
     const shavianText = inputElement.value;
+    outputElement.textContent = "Converting...";
     const latinText = await shavianToLatinReq(shavianText);
     outputElement.textContent = latinText;
   });
