@@ -1,27 +1,32 @@
 async function shavianToLatinReq(shavian) {
-  // change this to spentine.com url when deployed
-  // const apiUrl = "https://spentine.com/api/s2l";
-  const apiUrl = "http://localhost:8300/api/s2l";
-  
-  // send shavian text to the API and get latin text back
-  const response = await fetch(apiUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ text: shavian }),
-  });
-  
-  // error handling or whatever
-  if (!response.ok) {
-    throw new Error("Failed to fetch transliteration");
+  try {
+    // change this to spentine.com url when deployed
+    const apiUrl = "https://spentine.com/shawTL/api/s2l";
+    // const apiUrl = "http://localhost:8300/api/s2l";
+    
+    // send shavian text to the API and get latin text back
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ text: shavian }),
+    });
+    
+    // error handling or whatever
+    if (!response.ok) {
+      throw new Error("Failed to fetch transliteration");
+    }
+    
+    // parse the response and return the latin text
+    const data = await response.json();
+    console.log(data);
+    
+    return data.text;
+  } catch (error) {
+    console.error("Error during transliteration:", error);
+    return "Error during transliteration. Please try again later.";
   }
-  
-  // parse the response and return the latin text
-  const data = await response.json();
-  console.log(data);
-  
-  return data.text;
 }
 
 function main() {
