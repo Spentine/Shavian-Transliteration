@@ -143,6 +143,11 @@ async function readlexConvert(text) {
         return word;
       }
       
+      if (ipa === word) {
+        // if the ipa is the same as the word, return the word
+        return word;
+      }
+      
       // return the ipa in square brackets
       return `[${word}, ${ipa}]`;
     }
